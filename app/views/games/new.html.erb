@@ -1,0 +1,25 @@
+<h1>New Game</h1>
+<ul class=tileMe>
+<li><%= @letters[0]%></li>
+<li><%= @letters[1]%></li>
+<li><%= @letters[2]%></li>
+<li><%= @letters[3]%></li>
+<li><%= @letters[4]%></li>
+<li><%= @letters[5]%></li>
+<li><%= @letters[6]%></li>
+<li><%= @letters[7]%></li>
+<li><%= @letters[8]%></li>
+<li><%= @letters[9]%></li>
+</ul>
+
+
+<form action="/score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" name="word" placeholder="Word">
+  <input name="letters" value="<%= @letters %>" type="hidden" >
+  <input type="submit">
+</form>
+
+
+<p>Current Score</p>
+<%= session[:current_score] %>
